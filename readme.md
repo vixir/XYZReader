@@ -11,6 +11,7 @@ I spent most of the time on implementing activity transition animations. Became 
 
 ## Some gifs
 
+![transitions](http://i.imgur.com/Hg1M4ZX.gif)
 
 # Support:
 
@@ -22,3 +23,5 @@ aloupas answer on http://stackoverflow.com/questions/33797192/set-location-for-p
 Shared element transition from https://guides.codepath.com/android/Shared-Element-Activity-Transition
 
 UpButton Theme from Joshua W's answer on  http://stackoverflow.com/questions/28620883/how-to-change-toolbar-home-icon-color
+
+Udacity discussion forums.
