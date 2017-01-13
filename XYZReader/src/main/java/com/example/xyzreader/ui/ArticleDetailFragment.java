@@ -62,9 +62,7 @@ public class ArticleDetailFragment extends Fragment implements
     private long mItemId;
     private View mRootView;
     private int mMutedColor = 0xFF333333;
-    private ObservableScrollView mScrollView;
     private DrawInsetsFrameLayout mDrawInsetsFrameLayout;
-    private ColorDrawable mStatusBarColorDrawable;
     private Handler handler;
 
     private int mTopInset;
@@ -144,7 +142,6 @@ public class ArticleDetailFragment extends Fragment implements
         toolbar = (Toolbar) mRootView.findViewById(R.id.frag_detail_toolb);
         toolbar.setTitle("");
         ViewCompat.setTransitionName(mPhotoView, getString(R.string.detail_icon_transition_name) + mItemId);
-        mStatusBarColorDrawable = new ColorDrawable(0);
         mRootView.findViewById(R.id.share_fab).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -181,20 +178,6 @@ public class ArticleDetailFragment extends Fragment implements
 
     }
 
-
-    static float progress(float v, float min, float max) {
-        return constrain((v - min) / (max - min), 0, 1);
-    }
-
-    static float constrain(float val, float min, float max) {
-        if (val < min) {
-            return min;
-        } else if (val > max) {
-            return max;
-        } else {
-            return val;
-        }
-    }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     private void bindViews() {
@@ -291,7 +274,6 @@ public class ArticleDetailFragment extends Fragment implements
         AppCompatActivity activity = (AppCompatActivity) getActivity();
         if (activity != null) {
             activity.supportStartPostponedEnterTransition();
-            activity.startPostponedEnterTransition();
         }
     }
 

@@ -43,7 +43,6 @@ public class ArticleDetailActivity extends AppCompatActivity
                     View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN |
                             View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
         }
-        postponeEnterTransition();
         supportPostponeEnterTransition();
         setContentView(R.layout.activity_article_detail);
 
@@ -135,8 +134,6 @@ public class ArticleDetailActivity extends AppCompatActivity
         mCursor = null;
         mPagerAdapter.notifyDataSetChanged();
     }
-
-
     private class MyPagerAdapter extends FragmentStatePagerAdapter {
         public MyPagerAdapter(FragmentManager fm) {
             super(fm);
