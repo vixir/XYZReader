@@ -1,8 +1,10 @@
 package com.example.xyzreader.ui;
 
 import android.animation.Animator;
+import android.annotation.TargetApi;
 import android.app.Fragment;
 import android.app.LoaderManager;
+import android.content.Context;
 import android.content.Intent;
 import android.content.Loader;
 import android.database.Cursor;
@@ -24,12 +26,16 @@ import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.text.format.DateUtils;
 import android.text.method.LinkMovementMethod;
+import android.transition.Transition;
+import android.transition.TransitionInflater;
+import android.transition.TransitionSet;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewAnimationUtils;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -37,6 +43,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageLoader;
 import com.example.xyzreader.R;
 import com.example.xyzreader.data.ArticleLoader;
+
+import static android.support.design.R.styleable.AppBarLayout;
 
 /**
  * A fragment representing a single Article detail screen. This fragment is
@@ -74,7 +82,8 @@ public class ArticleDetailFragment extends Fragment implements
     public ArticleDetailFragment() {
     }
 
-    public static ArticleDetailFragment newInstance(long itemId) {
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    public static ArticleDetailFragment newInstance(long itemId, Context context) {
         Bundle arguments = new Bundle();
         arguments.putLong(ARG_ITEM_ID, itemId);
         ArticleDetailFragment fragment = new ArticleDetailFragment();
@@ -93,7 +102,6 @@ public class ArticleDetailFragment extends Fragment implements
         if (getArguments().containsKey(ARG_ITEM_ID)) {
             mItemId = getArguments().getLong(ARG_ITEM_ID);
         }
-
         mIsCard = getResources().getBoolean(R.bool.detail_is_card);
         mStatusBarFullOpacityBottom = getResources().getDimensionPixelSize(
                 R.dimen.detail_card_top_margin);
@@ -121,6 +129,12 @@ public class ArticleDetailFragment extends Fragment implements
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         mRootView = inflater.inflate(R.layout.fragment_article_detail, container, false);
+
+        Transition transition = TransitionInflater.from(getContext()).inflateTransition(R.transition.windows_transform_exit);
+        transition.addTarget(FrameLayout.class);
+        transition.removeTarget(R.id.appBar);
+        this.setReturnTransition(transition);
+
         mDrawInsetsFrameLayout = (DrawInsetsFrameLayout)
                 mRootView.findViewById(R.id.draw_insets_frame_layout);
         mDrawInsetsFrameLayout.setOnInsetsCallback(new DrawInsetsFrameLayout.OnInsetsCallback() {
@@ -133,7 +147,6 @@ public class ArticleDetailFragment extends Fragment implements
 
         mPhotoView = (ImageView) mRootView.findViewById(R.id.photo);
         ViewCompat.setTransitionName(mPhotoView, getString(R.string.detail_icon_transition_name) + mItemId);
-        Log.d(TAG, "Setting photo view transition name to: " + getString(R.string.detail_icon_transition_name) + mItemId);
         mStatusBarColorDrawable = new ColorDrawable(0);
         mRootView.findViewById(R.id.share_fab).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -188,9 +201,9 @@ public class ArticleDetailFragment extends Fragment implements
         }
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     private void bindViews() {
         if (mRootView == null) {
-//            startDelayedAnimation();
             return;
         }
 
@@ -271,6 +284,7 @@ public class ArticleDetailFragment extends Fragment implements
 
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     public void onLoaderReset(Loader<Cursor> cursorLoader) {
         mCursor = null;
