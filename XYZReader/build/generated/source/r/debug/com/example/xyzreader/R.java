@@ -3482,6 +3482,7 @@ containing a value of this type.
         public static final int change_image_transform=0x7f060000;
         public static final int windows_transform=0x7f060001;
         public static final int windows_transform_exit=0x7f060002;
+        public static final int windows_transform_non_exit=0x7f060003;
     }
     public static final class styleable {
         /** Attributes that can be used with a ActionBar.

@@ -152,10 +152,10 @@ public class ArticleListActivity extends ActionBarActivity implements
                 @Override
                 public void onClick(View view) {
                     long itemId = getItemId(vh.getAdapterPosition());
-
+                    Pair pair = new Pair<View, String>(view.findViewById(R.id.thumbnail), getString(R.string.detail_icon_transition_name) + itemId);
                     ActivityOptionsCompat activityOptions =
                             ActivityOptionsCompat.makeSceneTransitionAnimation(ArticleListActivity.this,
-                                    new Pair<View, String>(view.findViewById(R.id.thumbnail), getString(R.string.detail_icon_transition_name) + itemId));
+                        pair );
                     startActivity(new Intent(Intent.ACTION_VIEW,
                             ItemsContract.Items.buildItemUri(itemId)),activityOptions.toBundle());
                 }

@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <transitionSet xmlns:android="http://schemas.android.com/apk/res/android">
-     <slide android:duration="@android:integer/config_longAnimTime" android:slideEdge="bottom">
+     <slide android:duration="1000" android:slideEdge="bottom">
+         <targets>
+             <target android:excludeId="@android:id/statusBarBackground"/>
+             <target android:excludeId="@android:id/home"/>
+             <target android:excludeId="@android:id/navigationBarBackground"/>
+         </targets>
     </slide>
+    <fade android:duration="@android:integer/config_shortAnimTime">
+        <targets android:targetName="good">
+        </targets>
+    </fade>
 </transitionSet>

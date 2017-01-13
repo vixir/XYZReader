@@ -282,13 +282,11 @@
         <item name="android:windowSharedElementExitTransition">@transition/change_image_transform</item>
         <item name="android:windowSharedElementEnterTransition">@transition/change_image_transform</item>
         <item name="android:windowEnterTransition">@transition/windows_transform</item>
-     <!--   <item name="android:windowExitTransition">@transition/windows_transform</item>
-        <item name="android:windowReenterTransition">@transition/windows_transform_exit</item>-->
-        <item name="android:windowReturnTransition">@transition/windows_transform</item>
+        <item name="android:windowReenterTransition">@transition/windows_transform_exit</item>
+        <item name="android:windowReturnTransition">@transition/windows_transform_non_exit</item>
         <item name="android:windowSharedElementsUseOverlay">true</item>
         <item name="android:windowContentTransitions">true</item>
         <item name="android:windowActivityTransitions">true</item>
-
     </style>
     <style name="Theme.Bacon.Detail" parent="@style/Theme.Bacon">
         <item name="android:statusBarColor">@android:color/transparent</item>

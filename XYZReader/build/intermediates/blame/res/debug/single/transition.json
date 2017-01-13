@@ -10,5 +10,9 @@
     {
         "merged": "C:\\Users\\DELL\\Downloads\\xyz\\XYZReader\\build\\intermediates\\res\\merged\\debug\\transition\\windows_transform_exit.xml",
         "source": "C:\\Users\\DELL\\Downloads\\xyz\\XYZReader\\src\\main\\res\\transition\\windows_transform_exit.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Downloads\\xyz\\XYZReader\\build\\intermediates\\res\\merged\\debug\\transition\\windows_transform_non_exit.xml",
+        "source": "C:\\Users\\DELL\\Downloads\\xyz\\XYZReader\\src\\main\\res\\transition\\windows_transform_non_exit.xml"
     }
 ]

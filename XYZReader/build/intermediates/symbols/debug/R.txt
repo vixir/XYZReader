@@ -1903,3 +1903,4 @@ int styleable ViewStubCompat_android_layout 1
 int transition change_image_transform 0x7f060000
 int transition windows_transform 0x7f060001
 int transition windows_transform_exit 0x7f060002
+int transition windows_transform_non_exit 0x7f060003

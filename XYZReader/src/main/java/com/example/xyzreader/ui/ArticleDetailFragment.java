@@ -130,11 +130,6 @@ public class ArticleDetailFragment extends Fragment implements
                              Bundle savedInstanceState) {
         mRootView = inflater.inflate(R.layout.fragment_article_detail, container, false);
 
-        Transition transition = TransitionInflater.from(getContext()).inflateTransition(R.transition.windows_transform_exit);
-        transition.addTarget(FrameLayout.class);
-        transition.removeTarget(R.id.appBar);
-        this.setReturnTransition(transition);
-
         mDrawInsetsFrameLayout = (DrawInsetsFrameLayout)
                 mRootView.findViewById(R.id.draw_insets_frame_layout);
         mDrawInsetsFrameLayout.setOnInsetsCallback(new DrawInsetsFrameLayout.OnInsetsCallback() {
@@ -146,6 +141,8 @@ public class ArticleDetailFragment extends Fragment implements
         appCompatActivity = (AppCompatActivity) getActivity();
 
         mPhotoView = (ImageView) mRootView.findViewById(R.id.photo);
+        toolbar = (Toolbar) mRootView.findViewById(R.id.frag_detail_toolb);
+        toolbar.setTitle("");
         ViewCompat.setTransitionName(mPhotoView, getString(R.string.detail_icon_transition_name) + mItemId);
         mStatusBarColorDrawable = new ColorDrawable(0);
         mRootView.findViewById(R.id.share_fab).setOnClickListener(new View.OnClickListener() {
@@ -158,8 +155,6 @@ public class ArticleDetailFragment extends Fragment implements
             }
         });
         setStatusBarTranslucent(true);
-        toolbar = (Toolbar) mRootView.findViewById(R.id.frag_detail_toolb);
-        toolbar.setTitle("");
         appCompatActivity.setSupportActionBar(toolbar);
         appCompatActivity.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         return mRootView;

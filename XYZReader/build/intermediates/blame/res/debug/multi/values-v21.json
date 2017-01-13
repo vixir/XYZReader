@@ -2018,9 +2018,9 @@
                     "startLine": 279,
                     "startColumn": 4,
                     "startOffset": 20451,
-                    "endLine": 291,
+                    "endLine": 289,
                     "endColumn": 12,
-                    "endOffset": 21400
+                    "endOffset": 21314
                 },
                 "from": {
                     "file": "C:\\Users\\DELL\\Downloads\\xyz\\XYZReader\\src\\main\\res\\values-v21\\styles.xml",
@@ -2028,41 +2028,41 @@
                         "startLine": 3,
                         "startColumn": 4,
                         "startOffset": 59,
-                        "endLine": 15,
+                        "endLine": 13,
                         "endColumn": 12,
-                        "endOffset": 1020
+                        "endOffset": 932
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 292,
+                    "startLine": 290,
                     "startColumn": 4,
-                    "startOffset": 21405,
-                    "endLine": 297,
+                    "startOffset": 21319,
+                    "endLine": 295,
                     "endColumn": 12,
-                    "endOffset": 21745
+                    "endOffset": 21659
                 },
                 "from": {
                     "file": "C:\\Users\\DELL\\Downloads\\xyz\\XYZReader\\src\\main\\res\\values-v21\\styles.xml",
                     "position": {
-                        "startLine": 17,
+                        "startLine": 15,
                         "startColumn": 4,
-                        "startOffset": 1028,
-                        "endLine": 22,
+                        "startOffset": 940,
+                        "endLine": 20,
                         "endColumn": 12,
-                        "endOffset": 1373
+                        "endOffset": 1285
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 298,
+                    "startLine": 296,
                     "startColumn": 4,
-                    "startOffset": 21750,
-                    "endLine": 300,
+                    "startOffset": 21664,
+                    "endLine": 298,
                     "endColumn": 12,
-                    "endOffset": 21920
+                    "endOffset": 21834
                 },
                 "from": {
                     "file": "C:\\Users\\DELL\\Downloads\\xyz\\XYZReader\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.0\\res\\values-v21\\values-v21.xml",
@@ -2078,12 +2078,12 @@
             },
             {
                 "to": {
-                    "startLine": 301,
+                    "startLine": 299,
                     "startColumn": 4,
-                    "startOffset": 21925,
-                    "endLine": 305,
+                    "startOffset": 21839,
+                    "endLine": 303,
                     "endColumn": 12,
-                    "endOffset": 22261
+                    "endOffset": 22175
                 },
                 "from": {
                     "file": "C:\\Users\\DELL\\Downloads\\xyz\\XYZReader\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.0\\res\\values-v21\\values-v21.xml",
@@ -2099,12 +2099,12 @@
             },
             {
                 "to": {
-                    "startLine": 306,
+                    "startLine": 304,
                     "startColumn": 4,
-                    "startOffset": 22266,
-                    "endLine": 308,
+                    "startOffset": 22180,
+                    "endLine": 306,
                     "endColumn": 12,
-                    "endOffset": 22455
+                    "endOffset": 22369
                 },
                 "from": {
                     "file": "C:\\Users\\DELL\\Downloads\\xyz\\XYZReader\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.0.0\\res\\values-v21\\values-v21.xml",
