@@ -1,13 +1,25 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:fitsSystemWindows="false"
     android:theme="@style/Theme.Bacon.Detail">
+
 
     <android.support.v4.view.ViewPager
         android:id="@+id/pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
     />
-
+    <android.support.v7.widget.Toolbar
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/activity_detail_toolb"
+        app:theme="@style/ToolbarColoredBackArrow"
+        android:background="@android:color/transparent"
+        android:layout_marginTop="@dimen/statusBar_average"
+        android:layout_width="match_parent"
+        app:navigationIcon="?homeAsUpIndicator"
+        android:layout_height="?actionBarSize">
+    </android.support.v7.widget.Toolbar>
 </RelativeLayout>

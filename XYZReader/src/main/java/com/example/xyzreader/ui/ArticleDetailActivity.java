@@ -1,5 +1,6 @@
 package com.example.xyzreader.ui;
 
+import android.annotation.TargetApi;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.LoaderManager;
@@ -13,10 +14,12 @@ import android.support.annotation.RequiresApi;
 import android.support.v13.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.TypedValue;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 
 import com.example.xyzreader.R;
 import com.example.xyzreader.data.ArticleLoader;
@@ -31,9 +34,10 @@ public class ArticleDetailActivity extends AppCompatActivity
     private Cursor mCursor;
     private long mStartId;
     private long mSelectedItemId;
-
+    private Toolbar toolbar;
     private ViewPager mPager;
     private MyPagerAdapter mPagerAdapter;
+    @TargetApi(Build.VERSION_CODES.M)
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,9 +49,11 @@ public class ArticleDetailActivity extends AppCompatActivity
         }
         supportPostponeEnterTransition();
         setContentView(R.layout.activity_article_detail);
-
+        setStatusBarTranslucent(true);
+        toolbar = (Toolbar) findViewById(R.id.activity_detail_toolb);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("");
         getLoaderManager().initLoader(0, null, this);
-
         mPagerAdapter = new MyPagerAdapter(getFragmentManager());
         mPager = (ViewPager) findViewById(R.id.pager);
         mPager.setTransitionGroup(true);
@@ -103,6 +109,14 @@ public class ArticleDetailActivity extends AppCompatActivity
         postponeEnterTransition();
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
+    protected void setStatusBarTranslucent(boolean makeTranslucent) {
+        if (makeTranslucent) {
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        } else {
+            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        }
+    }
     @Override
     public Loader<Cursor> onCreateLoader(int i, Bundle bundle) {
         return ArticleLoader.newAllArticlesInstance(this);

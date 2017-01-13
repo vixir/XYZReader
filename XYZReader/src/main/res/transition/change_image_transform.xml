@@ -2,8 +2,4 @@
     xmlns:android="http://schemas.android.com/apk/res/android" android:duration="1000">
     <changeBounds/>
     <changeImageTransform/>
-    <fade android:duration="100">
-        <targets android:targetName="tool">
-        </targets>
-    </fade>
 </transitionSet>

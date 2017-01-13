@@ -22,7 +22,6 @@ import android.support.v4.app.ShareCompat;
 import android.support.v4.view.ViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.graphics.Palette;
-import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.text.format.DateUtils;
 import android.text.method.LinkMovementMethod;
@@ -67,11 +66,7 @@ public class ArticleDetailFragment extends Fragment implements
 
     private int mTopInset;
     private ImageView mPhotoView;
-    private int mScrollY;
     private boolean mIsCard = false;
-    private Toolbar toolbar;
-    private int mStatusBarFullOpacityBottom;
-    private AppCompatActivity appCompatActivity;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -101,8 +96,6 @@ public class ArticleDetailFragment extends Fragment implements
             mItemId = getArguments().getLong(ARG_ITEM_ID);
         }
         mIsCard = getResources().getBoolean(R.bool.detail_is_card);
-        mStatusBarFullOpacityBottom = getResources().getDimensionPixelSize(
-                R.dimen.detail_card_top_margin);
         setHasOptionsMenu(true);
     }
 
@@ -136,11 +129,7 @@ public class ArticleDetailFragment extends Fragment implements
                 mTopInset = insets.top;
             }
         });
-        appCompatActivity = (AppCompatActivity) getActivity();
-
         mPhotoView = (ImageView) mRootView.findViewById(R.id.photo);
-        toolbar = (Toolbar) mRootView.findViewById(R.id.frag_detail_toolb);
-        toolbar.setTitle("");
         ViewCompat.setTransitionName(mPhotoView, getString(R.string.detail_icon_transition_name) + mItemId);
         mRootView.findViewById(R.id.share_fab).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -151,21 +140,11 @@ public class ArticleDetailFragment extends Fragment implements
                         .getIntent(), getString(R.string.action_share)));
             }
         });
-        setStatusBarTranslucent(true);
-        appCompatActivity.setSupportActionBar(toolbar);
-        appCompatActivity.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        ViewCompat.setTransitionName((View)toolbar, "tool");
+
         return mRootView;
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.M)
-    protected void setStatusBarTranslucent(boolean makeTranslucent) {
-        if (makeTranslucent) {
-            getActivity().getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-        } else {
-            getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-        }
-    }
+
 
 
     private void updateFab() {
