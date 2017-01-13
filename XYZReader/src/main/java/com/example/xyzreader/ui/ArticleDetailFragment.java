@@ -154,6 +154,7 @@ public class ArticleDetailFragment extends Fragment implements
         setStatusBarTranslucent(true);
         appCompatActivity.setSupportActionBar(toolbar);
         appCompatActivity.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        ViewCompat.setTransitionName((View)toolbar, "tool");
         return mRootView;
     }
 

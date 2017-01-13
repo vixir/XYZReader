@@ -153,9 +153,10 @@ public class ArticleListActivity extends ActionBarActivity implements
                 public void onClick(View view) {
                     long itemId = getItemId(vh.getAdapterPosition());
                     Pair pair = new Pair<View, String>(view.findViewById(R.id.thumbnail), getString(R.string.detail_icon_transition_name) + itemId);
+                    Pair<View, String> p1 = Pair.create((View)mToolbar, "tool");
                     ActivityOptionsCompat activityOptions =
                             ActivityOptionsCompat.makeSceneTransitionAnimation(ArticleListActivity.this,
-                        pair );
+                        pair , p1);
                     startActivity(new Intent(Intent.ACTION_VIEW,
                             ItemsContract.Items.buildItemUri(itemId)),activityOptions.toBundle());
                 }

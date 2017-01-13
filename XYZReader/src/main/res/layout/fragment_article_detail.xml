@@ -42,7 +42,6 @@
                                 android:background="@android:color/transparent"
                                 android:layout_marginTop="@dimen/statusBar_average"
                                 android:layout_width="match_parent"
-                                android:transitionName="good"
                                 app:layout_collapseMode="pin"
                                 android:layout_height="?actionBarSize">
                             </android.support.v7.widget.Toolbar>
