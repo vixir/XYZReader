@@ -10,4 +10,13 @@
     <dimen name="refresher_offset_end">128dp</dimen>
     <dimen name="toolbar_elevation">4dp</dimen>
     <dimen name="statusBar_average">24dp</dimen>
+    <dimen name="cardview_margin">4dp</dimen>
+    <dimen name="list_item_textview_padding">16dp</dimen>
+    <dimen name="list_item_title_padding">16dp</dimen>
+    <dimen name="list_item_title_padding_bottom">4dp</dimen>
+    <dimen name="image_view_default_height">100dp</dimen>
+    <dimen name="fab_width">56dp</dimen>
+    <dimen name="less_than_toolbar_elevation">2dp</dimen>
+    <dimen name="collapsing_toolbar_default_end_margin">64dp</dimen>
+    <dimen name="collapsing_toolbar_default_start_margin">48dp</dimen>
 </resources>

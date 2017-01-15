@@ -23,8 +23,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:fitsSystemWindows="false"
-                            app:expandedTitleMarginEnd="64dp"
-                            app:expandedTitleMarginStart="48dp"
+                            app:expandedTitleMarginEnd="@dimen/collapsing_toolbar_default_end_margin"
+                            app:expandedTitleMarginStart="@dimen/collapsing_toolbar_default_start_margin"
                             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
                                 <!--suppress AndroidLintContentDescription -->
@@ -59,8 +59,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:background="#fff"
-                        android:elevation="2dp"
+                        android:background="@android:color/white"
+                        android:elevation="@dimen/less_than_toolbar_elevation"
                         android:maxWidth="@dimen/detail_card_max_width"
                         android:orientation="vertical">
 
@@ -70,7 +70,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="bottom"
                             android:layout_marginBottom="@dimen/detail_metabar_vert_padding"
-                            android:background="#333"
+                            android:background="@color/dark_background"
                             android:orientation="vertical"
                             android:paddingBottom="@dimen/detail_metabar_vert_padding"
                             android:paddingLeft="@dimen/detail_inner_horiz_margin"
@@ -94,7 +94,7 @@
                                 style="?android:attr/textAppearanceSmall"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:textColor="#8fff" />
+                                android:textColor="@android:color/white" />
                         </android.widget.LinearLayout>
 
                         <TextView
@@ -117,8 +117,8 @@
 
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/share_fab"
-            android:layout_width="56dp"
-            android:layout_height="56dp"
+            android:layout_width="@dimen/fab_width"
+            android:layout_height="@dimen/fab_width"
             android:layout_marginBottom="@dimen/fab_margin"
             android:layout_marginRight="@dimen/fab_margin"
             android:contentDescription="@string/action_share"

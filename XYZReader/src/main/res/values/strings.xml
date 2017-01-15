@@ -9,5 +9,6 @@
 
     <string name="up">Up</string>
     <string name="detail_icon_transition_name">whos</string>
+    <string name="tool_transition_name">tool</string>
 
 </resources>
